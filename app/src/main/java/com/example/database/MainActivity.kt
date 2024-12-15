@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DatabaseTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    GreetingPreview(
+                    PengelolaHalaman(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
