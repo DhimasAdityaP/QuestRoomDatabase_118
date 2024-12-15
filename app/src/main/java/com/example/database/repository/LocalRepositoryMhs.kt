@@ -1,6 +1,6 @@
 package com.example.database.repository
 
-import com.example.database.data.dao.MahasiswaDao
+import com.example.data.dao.MahasiswaDao
 import com.example.database.data.entity.Mahasiswa
 import kotlinx.coroutines.flow.Flow
 
@@ -12,6 +12,17 @@ class LocalRepositoryMhs (
     }
 
     override fun getAllMahasiswa(): Flow<List<Mahasiswa>> {
-        return  mahasiswaDao.getALLMahasiswa()
+        return  mahasiswaDao.getAllMhs()
+    }
+    override fun getMhs(nim: String): Flow<Mahasiswa> {
+        return mahasiswaDao.getMahasiswa(nim)
+    }
+
+    override suspend fun deleteMhs(mahasiswa: Mahasiswa) {
+        mahasiswaDao.deleteMahasiswa(mahasiswa)
+    }
+
+    override suspend fun updateMhs(mahasiswa: Mahasiswa) {
+        mahasiswaDao.updateMahasiswa(mahasiswa)
     }
 }
