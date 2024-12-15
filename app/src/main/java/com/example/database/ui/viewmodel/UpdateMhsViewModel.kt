@@ -32,13 +32,13 @@ class UpdateMhsViewModel(
         }
     }
 
-    fun updateState(mahasiswaEvent: MahasiswaEvent) {
+    fun updateState (mahasiswaEvent: MahasiswaEvent) {
         updateUIState = updateUIState.copy(
             mahasiswaEvent = mahasiswaEvent,
         )
     }
 
-    fun validateFields(): Boolean {
+    fun validateFields() : Boolean {
         val event = updateUIState.mahasiswaEvent
         val errorState = FormErrorState(
             nim = if (event.nim.isNotEmpty()) null else "NIM tidak boleh kosong",
@@ -65,11 +65,8 @@ class UpdateMhsViewModel(
                         mahasiswaEvent = MahasiswaEvent(),
                         isEntryValid = FormErrorState()
                     )
-                    println(
-                        "snackBarMessage diatur: ${
-                            updateUIState.snackBarMessage
-                        }"
-                    )
+                    println("snackBarMessage diatur: ${updateUIState.
+                    snackBarMessage}")
                 } catch (e: Exception) {
                     updateUIState = updateUIState.copy(
                         snackBarMessage = "Data gagal diupdate"
@@ -83,7 +80,11 @@ class UpdateMhsViewModel(
         }
     }
 
-    fun Mahasiswa.toUiStateMhs(): MhsUIState = MhsUIState(
-        mahasiswaEvent = this.toDetailUiEvent(),
-    )
+    fun resetSnackBarMessage() {
+        updateUIState = updateUIState.copy(snackBarMessage = null)
+    }
 }
+
+fun Mahasiswa.toUiStateMhs () : MhsUIState = MhsUIState(
+    mahasiswaEvent = this.toDetailUiEvent(),
+)
