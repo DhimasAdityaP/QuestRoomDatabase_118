@@ -1,4 +1,4 @@
-package com.pam.questroomdatabase_139.data.dao
+package com.example.data.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
