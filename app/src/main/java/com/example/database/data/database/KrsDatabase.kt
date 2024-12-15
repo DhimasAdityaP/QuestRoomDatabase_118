@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.database.data.dao.MahasiswaDao
 import com.example.database.data.entity.Mahasiswa
+import com.pam.questroomdatabase_139.data.dao.MahasiswaDao
 
 @Database(entities = [Mahasiswa::class], version= 1, exportSchema = false)
 abstract class KrsDatabase:RoomDatabase() {
